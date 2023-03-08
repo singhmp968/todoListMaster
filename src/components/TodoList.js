@@ -40,9 +40,14 @@ class TodoList extends React.Component {
     this.props.dispatch(updateTodoItem(todoitem));
   };
   handleDeleteBtn = (todoItemId) => {
-    console.log("componentDidMount", todoItemId);
     this.props.dispatch(deleteTodoItem(todoItemId));
   };
+
+  handleCheck = (todoItemId) => {
+    console.log("todoItemId", todoItemId);
+    // logic to make check un check
+  };
+
   render() {
     // console.log("todoListIndie", this.props);
     const { todolsits } = this.props;
@@ -77,6 +82,11 @@ class TodoList extends React.Component {
                       >
                         Delete{" "}
                       </button>
+                      <input
+                        type="checkbox"
+                        checked={toitm.completed}
+                        onClick={() => this.handleCheck(toitm.id)}
+                      ></input>
                     </div>
                   </div>
                 )}

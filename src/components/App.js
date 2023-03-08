@@ -14,7 +14,7 @@ class App extends React.Component {
     console.log("PROPS", this.props);
     const { todolsits } = this.props;
     return (
-      <div>
+      <div className="mainBody">
         <AddTodoItem></AddTodoItem>
         <TodoList todolsits={todolsits} dispatch={this.props.dispatch} />
       </div>
